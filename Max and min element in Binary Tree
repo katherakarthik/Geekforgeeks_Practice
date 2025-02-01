@@ -1,0 +1,25 @@
+class Solution{
+    public static int findMax(Node root){
+        //code here
+        if(root==null)return Integer.MIN_VALUE;
+        
+        int max=root.data;
+        
+        int leftM=findMax(root.left);
+        int rightM=findMax(root.right);
+        return Math.max(max,Math.max(leftM,rightM));
+        
+        
+        
+    }
+    public static int findMin(Node root){
+        //code here
+        if(root==null)return Integer.MAX_VALUE;
+        
+        int min=root.data;
+        
+        int leftM=findMin(root.left);
+        int rightM=findMin(root.right);
+        return Math.min(min,Math.min(leftM,rightM));
+    }
+}
